@@ -5,6 +5,7 @@ import { useEffect , useState} from "react";
 function App() {
   const [data, setData] = useState([]);
   const [offset, setOffset] = useState(0);
+  const [profileUrl, setProfileUrl] = useState ("")
 
   const fetchPokemon = (os) => {
     let url = `https://pokeapi.co/api/v2/pokemon/?offset=${os}&limit=20`;
@@ -19,7 +20,7 @@ function App() {
   };
 
   const handlePrevious = () => {
-    setOffset(prev => prev -=20);
+    setOffset(prev => prev -= 20);
   };
 
   useEffect(() => {
@@ -37,6 +38,7 @@ function App() {
       <button onClick={handlePrevious}>Previous</button>
       <button onClick={handleNext}>Next</button>
     </div>
+    
   );
 }
 
